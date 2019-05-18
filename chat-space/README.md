@@ -11,7 +11,7 @@
 | password | string | null: false |
 
 ### Association
-- has_many :messages, through: :members
+- has_many :messages, 
 - has_many :members
 - has_many :groups, through: :members
 
@@ -20,10 +20,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-| body | text | null: false, foreign_key: true |
-| image | string | foreign_key: true  | 
-| user_id | integer | null: false, foreign_key: true |
-| group_id | integer | null: false, foreign_key: true |
+| body | text | null: false, |
+| image | string | 
+| user_id | references | null: false, foreign_key: true |
+| group_id | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -34,8 +34,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-| user_id | integer | null: false, foreign_key: true |
-| group_id | integer | null: false, foreign_key: true |
+| user_id | references | null: false, foreign_key: true |
+| group_id | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -46,12 +46,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-| user_id | integer | null: false, foreign_key: true |
-| body | text | null: false, foreign_key: true |
-| image | string | foreign_key: true |
+| name | string | null: false |
 
 ### Association
 
-- belongs_to :user
+- has_many :users
 - has_many :messages through: :members
+- has_many :members 
 

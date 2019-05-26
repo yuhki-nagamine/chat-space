@@ -1,9 +1,8 @@
 .wrapper
-  / -----------------left--------------------
+ // -----------------left--------------------
   .chat-side
     .side-header
       .side-header__box
-        = current_user.name
       %ul.side-header__menu
         %li.side-header__menu__edit-user
         %a{href: "/groups/new"}
@@ -13,16 +12,14 @@
           %i.fab.fa-twitter
 
     .groups
-      .group
-        - current_user.groups.each do |group|
-          = link_to group_messages_path(group) do
+        .group
             .group__group-name
-              = group.name
-              .group__group-name__latest-message
-                = group.show_last_message
+                 = group.name
+                    .group__group-name__latest-message
+                         = group.show_last_message
 
 
-  / ----------------right-------------------
+  // ----------------right-------------------
   .chat-main
 
     .main-header

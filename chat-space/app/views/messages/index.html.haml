@@ -1,5 +1,4 @@
 .wrapper
- // -----------------left--------------------
   .chat-side
     .side-header
       .side-header__box
@@ -12,11 +11,11 @@
           %i.fab.fa-twitter
 
     .groups
-        .group
-            .group__group-name
-                 = group.name
-                    .group__group-name__latest-message
-                         = group.show_last_message
+      .group
+        .group__group-name
+          = group.name
+            .group__group-name__latest-message
+              = group.show_last_message
 
 
   // ----------------right-------------------
@@ -44,4 +43,4 @@
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+        

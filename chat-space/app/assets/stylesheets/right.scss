@@ -1,0 +1,100 @@
+// -----------------------right--------------------------
+.chat-main {
+    float: left;
+    height: 100vh;
+    width: calc(100vh - 300px);
+    .main-header {
+        height: 100px;
+        padding: 0 40px;
+        border-bottom: medium solid #eeeeee;
+        position: relative;
+        a {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+            margin-top: 30px;
+            border: solid 1px #38aef0;
+            color: #38aef0;
+            position: absolute;
+            right: 40px;
+        }
+        &__left-box {
+            &__current-group {
+                font-size: 20px;
+                color: #333333;
+                padding-top: 35px;
+                padding-bottom: 15px;
+            }
+            &__member_list {
+                font-size: 12px;
+                color: #999999;
+            }
+        }
+    }
+    .messages {
+        overflow: auto;
+        padding: 46px 40px;
+        height: calc( 100 - 285px);
+        background-color: #fafafa;
+        .message {
+            .upper-message {
+                padding-bottom: 40px;
+                &__user-name {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #434a54;
+                    float: left;
+                }
+                &__date {
+                    font-size: 12px;
+                    color: #999999;
+                    margin-left: 10px;
+                    float: left;
+                }
+            }
+            .lower-message {
+                color: #434a54;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .form {
+        height: 90px;
+        width: calc( 100vw - 380px);
+        padding: 0 40px;
+        background-color: #ddd;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        &__message {
+            height: 46px;
+            width: 880px;
+            background-color: white;
+            margin: 20px 0;
+            float: left;
+            padding: 0 10px;
+            position: relative;
+        }
+        &__mask {
+            position: absolute;
+            top: 36px;
+            right: 160px;
+            .icon {
+                font-size: 1.3em;
+            }
+            .hidden {
+                display: none;
+            }
+        }
+    }
+    &__submit {
+        width: 100px;
+        height: 50px;
+        background-color: #38aef0;
+        color: white;
+        position: absolute;
+        right: 40px;
+        top: 20px;
+    }
+}

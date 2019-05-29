@@ -1,46 +1,25 @@
-.wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-      %ul.side-header__menu
-        %li.side-header__menu__edit-user
-        %a{href: ""}<
-          %i.fa.fa-pencil-square-o
-        %li.side-header__menu__new-group
-        %a{href: ""}<
-          %i.fa.fa-cog 
+.flash-box
+  .wrapper
+    .chat-side
+      .side-header
+        .side-header__box
+          %p yuhki
+          %ul.side-header__menu
+            %li.side-header__menu__edit-user
+              %a{href: ""}<
+                %i.fa.fa-pencil-square-o
+            %li.side-header__menu__new-group
+              %a{href: ""}<
+                %i.fa.fa-cog 
 
-    .groups
-      .group
-        .group__group-name
-          = group.name
-            .group__group-name__latest-message
-              = group.show_last_message
-
-
-  // ----------------right-------------------
-  .chat-main
-
-    .main-header
-      %a{href: ""} edit
-
-      .main-header__left-box
-        .main-header__left-box__current-group
-          %h2 TEST_GROUP
-        .main-header__left-box__member-list
-          member :
-          
-
-
-    .messages
-      = render @messages
-
-    .form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', 
-        id: 'new_message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+      .groups
+        .group
+          .group-name
+            %p.group-name A
+            %p.latest-message hello!
+            %p.group-name B
+            %p.latest-message ola!
+            %p.group-name C
+            %p.latest-message bye!
+            %p.group-name D
+            %p.latest-message chao!

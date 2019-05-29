@@ -4,11 +4,11 @@
       .side-header__box
       %ul.side-header__menu
         %li.side-header__menu__edit-user
-        %a{href: "/groups/new"}
-          %i.fa.fa-edit
+        %a{href: ""}<
+          %i.fa.fa-pencil-square-o
         %li.side-header__menu__new-group
-        %a{href: "/users/162/edit"}
-          %i.fab.fa-twitter
+        %a{href: ""}<
+          %i.fa.fa-cog 
 
     .groups
       .group
@@ -22,15 +22,14 @@
   .chat-main
 
     .main-header
-      %a{href: "/groups/#{@group.id}/edit "} edit
+      %a{href: ""} edit
 
       .main-header__left-box
         .main-header__left-box__current-group
-          = @group.name
+          %h2 TEST_GROUP
         .main-header__left-box__member-list
           member :
-          - @group.users .each do |user|
-            = user.name
+          
 
 
     .messages
@@ -38,9 +37,10 @@
 
     .form
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', id: 'new_message', placeholder: 'type a message'
+        = f.text_field :content, class: 'form__message', 
+        id: 'new_message', placeholder: 'type a message'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
-        
+        = f.submit 'Send', class: 'form__submit'
